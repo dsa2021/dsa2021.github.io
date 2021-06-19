@@ -1,5 +1,5 @@
-name: Executor
-on: [push]
+name: Robo
+on:
   schedule:
     - cron: "50 6,18 * * *"
   push:
