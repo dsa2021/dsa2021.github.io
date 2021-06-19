@@ -3,9 +3,9 @@
 ## Participantes(alunos da Data Science Academy):
 
 - Angela
-- Joice
 - Humberto
 - Joao
+- Joice
 - Petronio
 
 ## Objeto do Projeto
