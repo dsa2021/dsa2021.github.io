@@ -1,4 +1,4 @@
-name: Robo
+name: robo
 on:
   schedule:
     - cron: "50 6,18 * * *"
