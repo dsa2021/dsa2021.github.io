@@ -46,7 +46,7 @@ request.onload = function(){
         let update_date = ('results' in data && 'date' in data['results'][0])? data['results'][0]['date']:z;
         let html_text = build_html(hj, message, deaths, state, city, confirmed_today, confirmed_diff, update_date);
         
-        document.getElementById(status).innerHTML= html_text;
+        document.getElementById("status").innerHTML= html_text;
         //document.body.innerHTML = html_text;
         //document.body.innerHTML = html_text;
         //document.body.innerHTML = city;
