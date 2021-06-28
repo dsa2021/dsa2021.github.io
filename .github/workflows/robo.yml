@@ -1,7 +1,7 @@
 name: robo
 on:
   schedule:
-    - cron: "59 1,13 * * *"
+    - cron: "15 1,13 * * *"
   push:
     branches: [ master ]
   pull_request:
@@ -10,16 +10,17 @@ jobs:
   update-data:
     runs-on: ubuntu-latest
     steps:
+      - name: ETAPA-1 Extrair dados da WEB
       - uses: actions/checkout@v2
-      - name: Downloading new data/data.json file
         env:
           API_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
-          chmod +x ./updater/main.py
-          ./updater/extrator.py "$API_TOKEN"
-      - name: Updating data/data.json
+          echo "MY_DATE=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+          chmod +x ./updater/extrator_queimadas.py
+          ./updater/extrator_queimadas.py
+      - name: ETAPA-2 Atualizar dados para o repositorio
         uses: test-room-7/action-update-file@v1.5.0
         with:
           file-path: data/*.csv
-          commit-msg: Atualizando data/data.json
+          commit-msg: Atualizar csv de ${{ env.MY_DATE }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
