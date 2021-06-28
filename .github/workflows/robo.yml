@@ -1,7 +1,7 @@
 name: robo
 on:
   schedule:
-    - cron: "50 6,18 * * *"
+    - cron: "59 1,13 * * *"
   push:
     branches: [ master ]
   pull_request:
@@ -16,10 +16,10 @@ jobs:
           API_TOKEN: ${{ secrets.API_TOKEN }}
         run: |
           chmod +x ./updater/main.py
-          ./updater/main.py "$API_TOKEN"
+          ./updater/extrator.py "$API_TOKEN"
       - name: Updating data/data.json
         uses: test-room-7/action-update-file@v1.5.0
         with:
-          file-path: data/data.json
+          file-path: data/*.csv
           commit-msg: Atualizando data/data.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
