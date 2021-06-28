@@ -19,7 +19,7 @@
 
     1.[Arquivos sobre Queimadas no Brasil - INPE](https://queimadas.dgi.inpe.br/queimadas/dados-abertos/#arquivos)  
     2.[Portal de Queimadas _ INPE](https://queimadas.dgi.inpe.br/queimadas/portal)  
-    3.[Notebook de Exemplo] (https://queimadas.dgi.inpe.br/queimadas/dados-abertos/exemplos/csv2nc.html)
+    3.[Notebook de Exemplo](https://queimadas.dgi.inpe.br/queimadas/dados-abertos/exemplos/csv2nc.html)  
     4.[Portal da NASA sobre Wildfires](https://earthdata.nasa.gov/learn/toolkits/wildfires)  
     5.[Dashboard Queimadas no Brasil](http://appcombo.com.br/?import=Queimadas%20no%20Brasil)  
     6.[Base de dados de Queimadas](https://basedosdados.org/dataset/banco-de-dados-de-queimadas) 
