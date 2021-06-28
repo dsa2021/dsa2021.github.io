@@ -1,2 +1,0 @@
-https://queimadas.dgi.inpe.br/queimadas/dados-abertos/download/?utm_campaign=dados-abertos&outputFormat=csv&utm_content=focos_ams_48h&utm_source=landing-page&utm_medium=landing-page&time=48h&id=focos_ams
-https://queimadas.dgi.inpe.br/queimadas/dados-abertos/download/?utm_campaign=dados-abertos&outputFormat=csv&utm_content=focos_brasil_48h&utm_source=landing-page&utm_medium=landing-page&time=48h&id=focos_brasil
