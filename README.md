@@ -12,6 +12,7 @@
 
 - Construção de um web scraping em linguagem python para alimentar alguma página na internet ou dashboard.
 -  Problemática de Queimadas no Brasil: 
+
     1.[Arquivos Queimadas no Brasil - INPE](https://queimadas.dgi.inpe.br/queimadas/dados-abertos/#arquivos)
     2.[Portal de Queimadas](https://queimadas.dgi.inpe.br/queimadas/portal)
     3.[Portal da NASA sobre Wildfires](https://earthdata.nasa.gov/learn/toolkits/wildfires)
