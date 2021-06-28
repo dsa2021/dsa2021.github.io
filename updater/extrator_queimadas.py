@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# encoding=utf8
 from datetime import datetime
 import time
 import io
@@ -26,7 +25,7 @@ def extrator_web(lista_url=[]):
 def ler_url():
     ''' Ler lista de url do arquivo url.txt '''
     lista_url = []
-    with io.open("url.txt", mode="r", encoding="utf-8", newline='\n') as f:
+    with io.open("./data/url.txt", mode="r", encoding="utf-8", newline='\n') as f:
         for line in f:
             lista_url.append(str(line).replace('\n',''))
     return lista_url
