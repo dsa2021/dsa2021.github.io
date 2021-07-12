@@ -3,7 +3,7 @@
 ## Participantes(alunos da Data Science Academy):
 
 - Angela
-- Humberto Jr.
+- Humberto
 - Joao
 - Joice
 - Petronio
