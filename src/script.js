@@ -47,9 +47,6 @@ request.onload = function(){
         // let html_text = build_html(hj, message, deaths, state, city, confirmed_today, confirmed_diff, update_date);
         let html_text = '<h1> Links de Análise </h1>'
         
-        https://htmlpreview.github.com/?https://raw.githubusercontent.com/dsa2021/dsa2021.github.io/main/analise/dataprep.html
-        https://htmlpreview.github.io/?https://github.com/dsa2021/dsa2021.github.io/blob/main/analise/dataprep.html
-    
         html_text = html_text + '<p><a href="https://htmlpreview.github.io/?https://github.com/dsa2021/dsa2021.github.io/blob/main/analise/dataprep.html">Análise via Dataprep</a></p>'
         html_text = html_text + '<p><a href="https://htmlpreview.github.io/?https://github.com/dsa2021/dsa2021.github.io/blob/main/analise/pandasprofiling.html">Análise via Pandas Profiling</a></p>'    
         html_text = html_text + '<p><a href="https://htmlpreview.github.io/?https://github.com/dsa2021/dsa2021.github.io/blob/main/analise/sweetviz.html">Análise via SweetViz</a></p>'
