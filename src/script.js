@@ -44,8 +44,13 @@ request.onload = function(){
         let confirmed_yesterday = ('results' in data && 'confirmed' in data['results'][1])? data['results'][1]['confirmed']:z;
         let confirmed_diff = parseInt(confirmed_today) - parseInt(confirmed_yesterday);
         let update_date = ('results' in data && 'date' in data['results'][0])? data['results'][0]['date']:z;
-        let html_text = build_html(hj, message, deaths, state, city, confirmed_today, confirmed_diff, update_date);
-        
+        // let html_text = build_html(hj, message, deaths, state, city, confirmed_today, confirmed_diff, update_date);
+        let html_text = '<h1> Links de Análise </h1>'
+        html_text = html_text + '<p><a href="https://raw.githubusercontent.com/dsa2021.github.io/blob/main/analise/dataprep.html">Análise via Dataprep</a></p>'
+        html_text = html_text + '<p><a href="https://raw.githubusercontent.com/dsa2021/dsa2021.github.io/blob/main/analise/pandasprofiling.html">Análise via Pandas Profiling</a></p>'    
+        html_text = html_text + '<p><a href="https://raw.githubusercontent.com/dsa2021/dsa2021.github.io/blob/main/analise/sweetviz.html">Análise via SweetViz</a></p>'
+        html_text = html_text + '<p><a href="https://raw.githubusercontent.com/dsa2021/dsa2021.github.io/main/analise/AutoViz_Plots/riscofogo/autoviz.html">Análise via Autoviz</a></p>'
+    
         document.body.innerHTML = html_text;
         //document.body.innerHTML = city;
    // }
