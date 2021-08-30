@@ -1,0 +1,231 @@
+---
+title: "**Projeto e <br> Queimadas **"
+author: "Time <br>Data Science Academy"
+subtitle: "Queimadas</a><br>#Queimadas"
+date: "`r format(Sys.Date(), format='%d/%m/%Y')`"
+encoding: "UTF-8"
+output:
+  rmdformats::readthedown:
+   code_folding: hide
+   self_contained: true
+   thumbnails: false
+   lightbox: true
+   gallery: false
+   highlight: tango
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+[![Fonte: Queimadas
+2010.](https://revistapesquisa.fapesp.br/wp-content/uploads/2019/10/062-065_queimadas_284-0-1140px.jpg)](https://s2.glbimg.com/RzKBN3O6Fh5QjqA4x0mQDiW4is4=/0x0:2000x1333/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/r/P/hrPwKtTZCMAZYIQ33EyQ/age20190828130.jpg)
+
+
+```{r setup, echo = FALSE, warning = FALSE, include = FALSE, warnings=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, fig.align = "center")
+#install.packages("contrib.url")
+library(gains)
+library(pROC)
+library(ROCR)
+library(ROSE)
+library(e1071)
+library(psych)
+library(randomForest)
+library(tree)
+library(knitr)
+library(MASS)
+library(corrplot)
+#install.packages("devtools")
+devtools::install_github("tidyverse/tidyverse")
+library(tidyverse)
+library(dplyr)
+library(knitr)
+library(markdown)
+library(ggplot2)
+```
+
+
+## **Resumo**
+
+<div style="text-align: justify">
+
+    A Energia Radiativa do Fogo (FRP) é uma técnica para quantificar a biomassa queimada usando dados de sensoriamento remoto.A FRP mede a energia radiante emitida por unidade de tempo pela vegetação queimada.
+  A estimativa do total de biomassa queimada é realizada a partir da Energia Radiativa do Fogo (FRE), que é definida como a energia emitida pelo fogo como radiação eletromagnética durante o ciclo de vida da queimada e pode ser obtida a partir da integração temporal da FRP.
+  
+<div/>
+
+## **2. Descrição das variáveis**
+
+<div style="text-align: justify">
+
+  Analisando os tipos dos dados
+  Este estudo analisa  para determinar quanto
+ cada , com base em . Isso
+é calculado através da 
+
+```{r Leitura, echo=TRUE, message=FALSE, warnings=FALSE}
+# Leitura dos dados
+dados_queimadas_v1 <- read.csv("Focos_2021-06-26_2021-06-27.csv")
+dados_queimadas_v1 %>%
+  DT::datatable()
+```
+  <div/>
+  
+## **3. Análise Exploratória dos dados**
+
+<div style="text-align: justify">
+
+Nesta seção serão apresentados os principais resultados obtidos na
+análise de dados em questão. No primeiro momento fez-se a leitura das
+$1.430$ observações referentes às **quatro** variáveis citadas
+anteriormente e todos os dados podem ser consultados na tabela a seguir:
+
+<div/>
+
+
+```{r}
+str(dados_queimadas_v1) %>% 
+  kable()
+```
+
+
+```{r}
+summary(dados_queimadas_v1)
+
+```
+Verificamos que existem dados faltantes e outliers
+
+Análise dias sem chuva
+
+```{r}
+hist(dados_queimadas_v1$diasemchuva,
+     main = "Histograma dias sem chuva",
+     xlab = "Quantidade de Dias",
+     ylab = "Frequência",
+     col = "#6600cc",
+     labels = TRUE)
+
+```
+
+Análise precipitação
+```{r}
+hist(dados_queimadas_v1$precipitacao,
+     main = "Histograma precipitacao",
+     xlab = "Quantidade de Dias",
+     ylab = "Frequência",
+     col = "#6600cc",
+     labels = TRUE)
+```
+
+Análise riscofogo
+
+```{r}
+hist(dados_queimadas_v1$riscofogo,
+     main = "Histograma Riscofogo",
+     xlab = "Quantidade de Dias",
+     ylab = "Frequência",
+     col = "#6600cc",
+     labels = TRUE)
+```
+
+#Removendo outliers negativos
+
+```{r}
+dados_queimadas_v2 =filter(dados_queimadas_v1,diasemchuva >=0 | is.na(diasemchuva),riscofogo >=0 | is.na(riscofogo))
+```
+
+Analise dos dados após a retirada dos outliers
+
+```{r}
+summary(dados_queimadas_v2)
+```
+
+
+Análise dias sem chuva
+
+```{r}
+hist(dados_queimadas_v2$diasemchuva,
+     main = "Histograma dias sem chuva",
+     xlab = "Quantidade de Dias",
+     ylab = "Frequência",
+     col = "#6600cc",
+     labels = TRUE)
+```
+
+
+Análise riscofogo
+```{r}
+hist(dados_queimadas_v2$riscofogo,
+     main = "Histograma Riscofogo",
+     xlab = "Quantidade de Dias",
+     ylab = "Frequência",
+     col = "#6600cc",
+     labels = TRUE)
+```
+
+Análise precipitação
+
+```{r}
+hist(dados_queimadas_v2$precipitacao ,
+     main = "Precipitacao",
+     xlab = "Quantidade de Dias",
+     ylab = "Frequência",
+     col = "#6600cc",
+     labels = TRUE)
+```
+
+Análise FRP (verificar se faz sentido!!!)
+
+```{r}
+hist(dados_queimadas_v2$frp ,
+     main = "Energia Radiativa do Fogo (FRP)",
+     xlab = "Quantidade de Dias",
+     ylab = "Frequência",
+     col = "#6600cc",
+     labels = TRUE)
+```
+
+Contando os valores NA(185 linhas e 2220 informações)
+
+```{r}
+sapply(dados_queimadas_v2, function(x)sum(is.na(x)))
+sum(is.na(dados_queimadas_v2)) %>% 
+  kable()
+```
+
+## ** Treinamento do modelo de regressão linear n1 **
+
+<div style="text-align: justify">
+
+<div/>
+
+## ** Treinamento do modelo de regressão linear n2 **
+
+<div style="text-align: justify">
+
+<div/>
+
+## ** Treinamento do modelo de regressão linear n3 **
+
+<div style="text-align: justify">
+
+<div/>
+
+## ** Treinamento do modelo de regressão linear n4 **
+
+<div style="text-align: justify">
+
+<div/>
+
+## ** Treinamento do modelo Random Forest **
+
+<div style="text-align: justify">
+
+<div/>
+
+## ** Treinamento do modelo Decision Tree **
+
+<div style="text-align: justify">
+
+<div/>
+
