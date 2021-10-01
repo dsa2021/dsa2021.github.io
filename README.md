@@ -19,7 +19,7 @@
 
 ## Objeto do Projeto
 
-- ~~Construção de um web scraping em linguagem python para alimentar alguma página na internet ou dashboard.
+- ~~Construção de um web scraping em linguagem python para alimentar alguma página na internet ou dashboard.~~
 
 
 ## Problema a ser resolvido
