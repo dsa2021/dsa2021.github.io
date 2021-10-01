@@ -8,9 +8,18 @@
 - Joice
 - Petronio
 
+## ENtregas do Projeto Final 
+
+- [ ] Relatório **Produto** em R MArkdown (3)- Publicado em: https://rpubs.com/joicerss/815685  
+- [ ] Sumário Executivo em PDF            (2)
+- [ ] Video                               (1)
+- [ ] Script em R versionado              (4)
+- [ ] ATualização do Git / Entrega p/ DSA (5)
+
+
 ## Objeto do Projeto
 
-- Construção de um web scraping em linguagem python para alimentar alguma página na internet ou dashboard.
+- ~~Construção de um web scraping em linguagem python para alimentar alguma página na internet ou dashboard.
 
 
 ## Problema a ser resolvido
