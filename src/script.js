@@ -6,8 +6,8 @@ window.onload = (event) => {
         var widthPage = document.getElementsByTagName('body')[0].clientWidth;
         var heightPage = document.getElementsByTagName('body')[0].clientHeight;
 
-        document.getElementById('frame').style.height = heightPage + "px";
-        document.getElementById('frame').style.width = widthPage + "px";
+        document.getElementById('content').style.height = heightPage + "px";
+        document.getElementById('content').style.width = widthPage + "px";
 };
 
 function build_html(hj, message,deaths, state, city, confirmed, confirmed_diff, date){
