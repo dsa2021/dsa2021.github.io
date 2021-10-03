@@ -2,13 +2,6 @@ var request = new XMLHttpRequest();
 var data_url = 'data/data.json';
 
 request.open('GET', data_url);
-window.onload = (event) => {
-        var widthPage = document.getElementsByTagName('body')[0].clientWidth;
-        var heightPage = document.getElementsByTagName('body')[0].clientHeight;
-
-        document.getElementById('content').style.height = heightPage + "px";
-        document.getElementById('content').style.width = widthPage + "px";
-};
 
 function build_html(hj, message,deaths, state, city, confirmed, confirmed_diff, date){
     var text;
