@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+
 html, body, div, h1, h2 {
 	margin: 0;
 	padding: 0;
@@ -9,6 +12,11 @@ html, body, div, h1, h2 {
 
 body{
     background-color: gainsboro;
+}
+
+.typewriter {
+	font-family: 'Anonymous Pro', monospace;
+	width: 70%;
 }
 
 .cabecalho{
@@ -30,6 +38,17 @@ h1{
     margin-top: 20px;
     font-size: xx-large;
 }
+
+h1:after {
+	content: '';
+	display: inline-block;
+	background-color: white;
+	margin-left: 2px;
+	height: 25px;
+	width: 4px;
+	animation: cursor 0.4s infinite;
+}
+
 #autores{
     text-align: justify;
     
@@ -57,4 +76,20 @@ main{
     background-color: black;
     color: dodgerblue;
 
+}
+/* The typewriter cursor effect */
+
+@keyframes cursor {
+	0% {
+		opacity: 1;
+	}
+	49% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
 }
