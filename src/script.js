@@ -3,6 +3,13 @@ var data_url = 'data/data.json';
 
 request.open('GET', data_url);
 
+$(document).ready(function(){
+  $("#button").click(function () { 
+      var url = $('#url').val();
+      $("#frame").attr("src", url);
+  });
+});
+
 function build_html(hj, message,deaths, state, city, confirmed, confirmed_diff, date){
     var text;
     text =  '<b>Execução instaurada hoje: </b>'+hj+'.';
