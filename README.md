@@ -1,4 +1,7 @@
-# Projeto de Data Science para Mentoria em 2021
+![Alerta de Fogo](https://github.com/dsa2021/dsa2021.github.io/blob/main/R/projetoqueimadas/fogo.png?raw=true)
+
+
+# Projeto: Previsão de risco de fogo em Vegetação
 
 ## Página do Produto Final
 
@@ -63,13 +66,13 @@
    2. [Documentação base para iniciantes usarem principais comandos Git](https://github.com/dsa2021/dsa2021.github.io/blob/main/docs/comandos_git.md)
  
  #### Problematização
- - Etapa em que foram discutidos os diversos prismas relativos ao Problema de Queimadas no Brasil e onde foi definido o chamado **RIsco Fogo** como recorte do problema que focaríamos no nosso trabalho. 
+ - Etapa em que foram discutidos os diversos prismas relativos ao Problema de Queimadas no Brasil e onde foi definido o chamado **Risco Fogo** como recorte do problema que focaríamos no nosso trabalho. 
 
-#### Analise exploratória
+#### Análise exploratória
 - Etapa em que foi escolhida a base de dados do **Projeto/Portal Queimadas do INPE**(link acima) para alguns experimentos exploratórios.
 - Para ilustrar as diversas formas de fazer uma análise exploratória, também foi demonstrada a utilização de AutomL ou ferramentas que fazem análises exploratórias de forma mais automática, como forma complementar de adição de conhecimento ao grupo. 
 - [Notebook em Python com algumas análises e algumas ferramentas demonstradas](https://github.com/dsa2021/dsa2021.github.io/blob/main/analise/analise_exploratoria_humberto.ipynb)
-- No entanto, a análise exploratória escolhida pelo grupo foi feita em Linguagem R com aplicação de regressão linear e seus modelos/resultados subsidiam o Produto Final.
+- No entanto, a melhor análise exploratória escolhida pelo grupo foi feita em Linguagem R com aplicação de regressão linear e seus modelos/resultados subsidiam o Produto Final.
 
 #### Implementação
 - Nesta etapa o principal desafio foi integrar o código feito em R, com um visão analítica de contexto(adicionada com o R MArkdown).
@@ -77,6 +80,7 @@
 
 #### Finalização
 - Por fim, discutimos os aspectos conclusivos do trabalho, organização das entregas a serem feitas e ressaltamos a importância do conjunto ser versionado e integrado em interface web. 
+- Fica como desafio futuro integrar o robô coletor de informações com o modelo de **Machine Learning** para previsão online de queimadas, no momento da coleta automatizada.
 - Foi publicado na plataforma **RPubs** uma [versão](https://rpubs.com/joicerss/815685), posteriormente integrado ao nosso repositório, acarretando nossa página do Produto entregue: 
 
 
