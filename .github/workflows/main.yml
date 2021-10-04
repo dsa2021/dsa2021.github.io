@@ -31,8 +31,8 @@ jobs:
       - name: ETAPA-1 Extrair dados da WEB
         run: |
           echo "MY_DATE=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-          chmod +x ./updater/extrator_queimadas.py
-          ./updater/extrator_queimadas.py
+          chmod +x ./etl/extrator_queimadas.py
+          ./etl/extrator_queimadas.py
 
       # Update repository
       - name: ETAPA-2 Atualizar dados para o repositorio
